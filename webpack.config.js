@@ -23,11 +23,20 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          "style-loader",
+          'style-loader',
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          'css-loader',
           'postcss-loader',
           "sass-loader"
+        ]
+      },
+      {
+        test: /\.css$/,
+        use:  [
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
         ]
       }
     ]
