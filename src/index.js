@@ -5,7 +5,7 @@ import TileLayer from 'ol/layer/Tile';
 import XYZSource from 'ol/source/XYZ';
 import {fromLonLat} from 'ol/proj';
 
-new Map({
+let map = new Map({
   target: 'map-container',
   layers: [
     new TileLayer({
@@ -19,3 +19,5 @@ new Map({
     zoom: 2
   })
 });
+
+window.map = map
