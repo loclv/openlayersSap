@@ -1,21 +1,20 @@
-import "./main.scss";
 import 'ol/ol.css';
-import {Map, View} from 'ol';
+import Map from 'ol/Map';
+import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
-import XYZSource from 'ol/source/XYZ';
-import {fromLonLat} from 'ol/proj';
+import {OSM} from 'ol/source';
 
-new Map({
-  target: 'map-container',
+let map = new Map({
   layers: [
     new TileLayer({
-      source: new XYZSource({
-        url: 'http://tile.stamen.com/terrain/{z}/{x}/{y}.jpg'
-      })
+      source: new OSM()
     })
   ],
+  target: 'map-container',
   view: new View({
-    center: fromLonLat([0, 0]),
-    zoom: 2
+    center: [15557616.105903586, 4255500.970286392],
+    zoom: 14
   })
 });
+
+window.map = map;
